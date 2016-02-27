@@ -17,5 +17,5 @@ Add a sineWave to your view with:
 
 sineWaveView.addSineWave(sineWave)
 
-![Screen Shot](Screen-Shot.png)
+![Screen Shot](SineWaveView.gif)
 
