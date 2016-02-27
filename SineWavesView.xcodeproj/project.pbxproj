@@ -12,6 +12,8 @@
 		7BB01F181C822C3C00EAF7B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB01F161C822C3C00EAF7B7 /* Main.storyboard */; };
 		7BB01F1A1C822C3C00EAF7B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB01F191C822C3C00EAF7B7 /* Assets.xcassets */; };
 		7BB01F1D1C822C3C00EAF7B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BB01F1B1C822C3C00EAF7B7 /* LaunchScreen.storyboard */; };
+		7BB01F251C822C5500EAF7B7 /* SineWavesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB01F241C822C5500EAF7B7 /* SineWavesView.swift */; };
+		7BB01F271C822CE600EAF7B7 /* SineWave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB01F261C822CE600EAF7B7 /* SineWave.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		7BB01F191C822C3C00EAF7B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BB01F1C1C822C3C00EAF7B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BB01F1E1C822C3C00EAF7B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB01F241C822C5500EAF7B7 /* SineWavesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWavesView.swift; sourceTree = SOURCE_ROOT; };
+		7BB01F261C822CE600EAF7B7 /* SineWave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWave.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				7BB01F121C822C3C00EAF7B7 /* AppDelegate.swift */,
 				7BB01F141C822C3C00EAF7B7 /* ViewController.swift */,
 				7BB01F161C822C3C00EAF7B7 /* Main.storyboard */,
+				7BB01F261C822CE600EAF7B7 /* SineWave.swift */,
+				7BB01F241C822C5500EAF7B7 /* SineWavesView.swift */,
 				7BB01F191C822C3C00EAF7B7 /* Assets.xcassets */,
 				7BB01F1B1C822C3C00EAF7B7 /* LaunchScreen.storyboard */,
 				7BB01F1E1C822C3C00EAF7B7 /* Info.plist */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BB01F251C822C5500EAF7B7 /* SineWavesView.swift in Sources */,
 				7BB01F151C822C3C00EAF7B7 /* ViewController.swift in Sources */,
 				7BB01F131C822C3C00EAF7B7 /* AppDelegate.swift in Sources */,
+				7BB01F271C822CE600EAF7B7 /* SineWave.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
