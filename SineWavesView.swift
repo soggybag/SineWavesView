@@ -11,30 +11,21 @@ import UIKit
 class SineWavesView: UIView {
     
     var array = [SineWave]()
-    
-    var t: Double = 0
-    var step: CGFloat = 0.15
-    var range: CGFloat = 100
-    var phase: CGFloat = 0
     var timer: NSTimer!
-    var color: UIColor = UIColor.redColor()
     
-    var pathLayer = CAShapeLayer()
+    var centerY: Double!
+    var steps = 200
+    var stepX: Double!
     
-    
-    
-    
+    /** Add a new sinewave to be rendered by this view */
     func addSineWave(sineWave: SineWave) {
         array.append(sineWave)
         layer.addSublayer(sineWave.layer)
     }
     
-    
-    
-    
-    
     func setup() {
-        layer.addSublayer(pathLayer)
+        centerY = Double(frame.height / 2)
+        
         NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "onTimer:", userInfo: nil, repeats: true)
     }
     
@@ -53,22 +44,20 @@ class SineWavesView: UIView {
         setup()
     }
     
+    override func layoutSubviews() {
+        stepX = Double(frame.width / CGFloat(steps))
+    }
+    
     override func drawRect(rect: CGRect) {
         update()
     }
     
     func onTimer(timer: NSTimer) {
-        t += Double(step)
         update()
     }
     
     func update() {
         // Draw a sine curve with a fill
-        
-        let centerY = frame.height / 2              // find the vertical center
-        let steps = 200                             // Divide the curve into steps
-        let stepX = frame.width / CGFloat(steps)    // find the horizontal step distance
-        
         
         for sineWave in array {
             let path = UIBezierPath()
@@ -80,10 +69,10 @@ class SineWavesView: UIView {
             
             let f = M_PI * 2 / Double(steps) * sineWave.frequency
             
-            for i in 0...steps {
-                let x = CGFloat(i) * stepX
+            for i in 0 ..< steps {
+                let x = Double(i) * stepX
                 let y = (sin((Double(i) * f) + sineWave.phase) * sineWave.amplitude) + Double(centerY)
-                path.addLineToPoint(CGPoint(x: x, y: CGFloat(y)))
+                path.addLineToPoint(CGPoint(x: x, y: Double(y)))
             }
             
             path.addLineToPoint(CGPoint(x: frame.width, y: frame.height))
@@ -91,7 +80,7 @@ class SineWavesView: UIView {
             
             sineWave.layer.path = path.CGPath
             sineWave.layer.lineWidth = 0
-            sineWave.layer.fillColor = UIColor(white: 0, alpha: 0.5).CGColor // sineWave.color.CGColor
+            sineWave.layer.fillColor = sineWave.color.CGColor // sineWave.color.CGColor
         }
     }
     

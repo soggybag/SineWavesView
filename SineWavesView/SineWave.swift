@@ -16,12 +16,14 @@ class SineWave {
     var phase: Double!
     var color: UIColor!
     
+    /** A shapelayer where the view can render this sine wave. */
     var layer = CAShapeLayer()
     
     func increment() {
         phase = phase + rate
     }
     
+    /** Initialize a sine wave with amplitude, frequency, rate, and color */
     init(amplitude: Double, frequency: Double, rate: Double, color: UIColor) {
         self.amplitude = amplitude
         self.frequency = frequency
